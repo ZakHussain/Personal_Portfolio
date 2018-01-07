@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome | Saud Zakariya Hussain </title>
+		<!--Import Google Icon Font-->
+      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		{% load staticfiles %}
+		<!--Import css files-->
+		<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/myStyles.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/materialize.css' %}">
+		<!--Import jQuery before materialize.js and myJquery.js-->	
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="{% static 'main_app/js/myJquery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'main_app/js/materialize.js' %}"></script>
+	</head>
+	<body>
+		<!-- fixed nav bar at the top -->
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper grey darken-4">
+					<a href="{% url 'index' %}" class="brand-logo flow-text minimum-width center">Saud Zakariya Hussain</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li><a href="{% url 'experience' %}">Experience</a></li>
+						<li><a href="{% url 'projects' %}">Projects</a></li>
+						<li><a href="{% url 'blog' %}">Blog</a></li>
+						<li><a href="https://github.com/ZakHussain">GitHub</a></li>
+					</ul>					
+				</div>
+			</nav>	
+		</div>
+		<!-- Page Starting photo -->
+		<div class="wrapper">
+			<div class="row"> 
+				<div class="s12 center-align">
+					<img src="{% static "main_app/images/MyWebsite_images/cell_array.JPG" %}"/>	
+				</div>	
+			</div>	
+		</div>
+		<!-- CONTENT -->
+		<div class="row">
+			<div class="col s12">
+				<div class="container section">
+					<h3 class="center-align">Welcome</h3>
+					<div class="left-align flow-text">	
+						My ambitions revolve around learning to utilize data to fuel the intergration of AI into art, robotics, and medicine.  		
+						<br>
+					    I created this website to give everyone access to the projects I've worked on. I believe it is important to effectively and efficiently share what I've learned with the world. I'm still relatively new to doing this, but bear with me a bit. I'll keep working at it! 
+						<br>				
+					</div>
+					<blockquote>*note* I add updates to the projects page the second week of every month. So I hope you keep coming back for more!</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 green lighten-5">
+				<div class="container section">
+					<h3 class="center-align">Experience</h3>
+					<div class="left-align flow-text">
+						Our Brain Observatory project reveals how neurons encode different visual stimuli in both single cells and populations of cells found within mouse visual cortex.
+						<br>
+						<br>
+						But what can we do with this data? We can explore functional properties of neurons in the brain area by looking at spatial and temporal response characteristics of visual neurons. With this, we can then come one step closer to answering how neurons encode visual information.
+						<br>
+						<br>
+						The data you retrieve from the Brain Observatory will allow you to plot fluorsescence traces, retrieve images containing cells that were stimulated, run eye-tracking analysis, and much more! So get to it, and have fun!
+						<br>
+						<br>
+						<a href=""><p class="right-align">Take a look -></p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="container section">
+					<h3 class="center-align">Projects</h3>
+					<div class="left-align flow-text">
+						Our Brain Observatory project reveals how neurons encode different visual stimuli in both single cells and populations of cells found within mouse visual cortex.
+						<br>
+						<br>
+						But what can we do with this data? We can explore functional properties of neurons in the brain area by looking at spatial and temporal response characteristics of visual neurons. With this, we can then come one step closer to answering how neurons encode visual information.
+						<br>
+						<br>
+						The data you retrieve from the Brain Observatory will allow you to plot fluorsescence traces, retrieve images containing cells that were stimulated, run eye-tracking analysis, and much more! So get to it, and have fun!
+						<br>
+						<br>						
+						<a href=""><p class="right-align">Look at my work -></p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 orange lighten-5">
+				<div class="container section">
+					<h3 class="center-align">Blog</h3>
+					<div class="left-align flow-text">
+						Our Brain Observatory project reveals how neurons encode different visual stimuli in both single cells and populations of cells found within mouse visual cortex.
+						<br>
+						<br>
+						But what can we do with this data? We can explore functional properties of neurons in the brain area by looking at spatial and temporal response characteristics of visual neurons. With this, we can then come one step closer to answering how neurons encode visual information.
+						<br>
+						<br>
+						The data you retrieve from the Brain Observatory will allow you to plot fluorsescence traces, retrieve images containing cells that were stimulated, run eye-tracking analysis, and much more! So get to it, and have fun!	
+						<br>	
+						<br>				
+						<a href=""><p class="right-align">Available Feb. 15</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="container section">
+					<h3 class="center-align">Connect</h3>
+					<div class="left-align flow-text">
+						Our Brain Observatory project reveals how neurons encode different visual stimuli in both single cells and populations of cells found within mouse visual cortex.
+						<br>
+						<br>
+						But what can we do with this data? We can explore functional properties of neurons in the brain area by looking at spatial and temporal response characteristics of visual neurons. With this, we can then come one step closer to answering how neurons encode visual information.
+						<br>
+						<br>
+						The data you retrieve from the Brain Observatory will allow you to plot fluorsescence traces, retrieve images containing cells that were stimulated, run eye-tracking analysis, and much more! So get to it, and have fun!
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
