@@ -17,4 +17,14 @@ def projects(request):
 def blog(request):
 	return render(request, 'main_app/blog.html')
 
+# project tab links
+def resight_project(request): 
+	return render(request, 'main_app/project_folders/resight.html')
+
+def neuron_morphologiesCLF(request): 
+	return render(request, 'main_app/project_folders/neuron_morphology_clf.html') 
+
+def cockroachCPG(request): 
+	return render(request, 'main_app/project_folders/cockroach_cpg.html') 
+
 # the views past this point are linked to from the projects.html page

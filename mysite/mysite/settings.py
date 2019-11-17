@@ -22,7 +22,7 @@ with open('../../key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = False
 
 ALLOWED_HOSTS = ['13.72.111.55', 'zakhussain.com', 'www.zakhussain.com']
 
