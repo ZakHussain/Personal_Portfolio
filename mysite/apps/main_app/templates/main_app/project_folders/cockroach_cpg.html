@@ -41,31 +41,94 @@
 		<div class="row">
 			<div class="col s12">
 				<div class="container section">
-					<h3 class="center-align">Cockroach CPG Available at 9pm 11/17/2019</h3>
+					<h3 class="center-align">Investigation of Cockroach Flight-CPG Behavior Across the Axes</h3>
 					<div class="left-align flow-text">	
 					    <br>
-					    Cockroach CPG Project
+					   	Saud Zakariya Hussain | PBIO - Computational Neuroscience | 02/15/2018
 						<br>				
 					</div>
-					<blockquote>*note* I add updates to the projects page the second week of every month. So I hope you keep coming back for more!</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 indigo lighten-5">
+				<div class="container section">
+					<h3 class="center-align">Prezi Presentation</h3>
+					<div class="left-align flow-text">
+					For This project, I aimed to use a pearson correlation & fourier transformation to analyze EMG data. The goal of using these statistical methods is to investigate the CPG behavior across the axes of a cockroach. 
+					</div>
+					<br>
+					<br>
+					<iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" width="100%" height="400" src="https://prezi.com/embed/hxcxbxyhkmlz/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI0bEpkT255Mml0ZnA3QXNnakp4Rmo5eXRBPT0&amp;landing_sign=13eYUHW0qzDchPXRGWGWtIuBQQSIR42vt55bDwevKAM"></iframe>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="container section">
+					<h3 class="center-align">Background</h3>
+					<div class="left-align flow-text">
+						Central pattern generators (CPGs) are networks of functionally distinguishable neurons that generate and regulate activity in the absence of sensory input. CPG dynamics are largely dependent on events at the intracellular, synaptic, and network level. In cockroaches, if we were to look at the neural circuit involved in the CPG, we would notice that these neurons are interconnect via both excitatory and inhibitory neurons. 
+						<br>
+						<br>
+						A basic explanation of the methodology of this experiment involved recording EMG signals from the forewings and hindwings of the cockroach. The CPG activity was invoked through using artificially generated wind current. We recorded the normal activity of the cockroach suspended in the air and following we manipulated its orientation by adjusting pitch and roll. 
+						<br>
+						<br>						
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col s12 green lighten-5">
 				<div class="container section">
-					<h3 class="center-align">Experience</h3>
+					<h3 class="center-align">Statistical Methods:</h3>
 					<div class="left-align flow-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
+						With the collected EMG data, using a pearson correlation seemed reasonable as it would test the association between the activity of the wing beat frequencies. In other words, when a cockroach uses one wing, is that a factor in determining another wing will be used? For the three orientations, we tested the relationship between the wings of the rostral contra-ipsilateral axis, caudal contra-ipsilateral axis, and the ipsilateral right axis. The following is the a basic Matlab
+						function I used to generat the Pearson for comparing anterior, posterior, ipsilateral anterior, 
+						and ipsilaterla posterior wings.  
 						<br>
 						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
+						<b>% the pearson function takes in data from two</b>
+						<br>
+						<b>% sets of data, calculates the covariance between </b>
+						<br>
+						<b>% the sets, and finally spits out the calculated</b>
+						<br>
+						<b>% pearson correlation value</b>
+						<br>
+						function [ p ] = pearson_f( x, y )
+						<br>
+						&nbsp; &nbsp; C = cov(x, y);
+						<br>
+						&nbsp; &nbsp; bp = C(2)/(std(x)*std(y));
+						<br>
+						end
 						<br>
 						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
+						Following this we utilized the simplicity of transforming the data from the time domain to the frequency domain via Building a simple function in Matlab that takes in a column of data containing the EMG signals and spits out the plot of power(DB) vs. frequency (Hz). Here is the code for that.
 						<br>
 						<br>
-						<a href=""><p class="right-align">Take a look -></p></a>
+						<b>% The plotfreq function takes in the column of data</b>
+						<br>
+						<b>% that contained the voltage values in the time domain.</b>
+						<br>
+						<b>% this will then be used to contruct the frequency domain.</b>
+						<br>
+						function [ output_args ] = plotfreq(x)
+						<br>
+						 &nbsp; &nbsp; [s, f, t, p] = spectrogram(double(x), 39800, 0, 0:1:100, 4000, 'yaxis')
+						 <br>
+						 &nbsp; &nbsp; plot(f, p)
+						 <br>
+						 &nbsp; &nbsp; xlabel('freq (hz)')
+						 <br>
+						 &nbsp; &nbsp; ylabel('power (dB)')
+						 <br>
+						end
+						<br>
+						<br>
 					</div>
 				</div>
 			</div>
@@ -73,53 +136,9 @@
 		<div class="row">
 			<div class="col s12">
 				<div class="container section">
-					<h3 class="center-align">Projects</h3>
+					<h3 class="center-align">Conclusion</h3>
 					<div class="left-align flow-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>						
-						<a href=""><p class="right-align">Look at my work -></p></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12 orange lighten-5">
-				<div class="container section">
-					<h3 class="center-align">Blog</h3>
-					<div class="left-align flow-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>	
-						<br>				
-						<a href=""><p class="right-align">Available Feb. 15</p></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12">
-				<div class="container section">
-					<h3 class="center-align">Connect</h3>
-					<div class="left-align flow-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
-						<br>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ex leo, ut tristique ex vulputate nec. Morbi fermentum faucibus velit et faucibus. Sed tellus augue, cursus sit amet ullamcorper sit amet, euismod ut erat. Quisque ante sem, commodo vitae ligula nec, sollicitudin fringilla leo. Aliquam sollicitudin metus ut augue volutpat, sed sollicitudin mi dapibus. Donec laoreet diam eget nunc rutrum, eu semper justo accumsan. Proin a risus nisi. Sed sed risus mauris.
+						The Fourier Transform of the data from the time to frequency domain provided valuable insight into seeing how the wing beat frequencies changed in the cockroach flight CPG in order to accommodate for the different orientations of suspended flight. As for future uses of the statistical procedures used, I believe that FFT has vast application across numerous neuro-specific topics, such as recording fish EODs, or even looking at human/primate EMG, stimulus-induced activity. .
 					</div>
 				</div>
 			</div>
