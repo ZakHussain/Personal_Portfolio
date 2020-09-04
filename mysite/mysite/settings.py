@@ -24,10 +24,11 @@ with open('../../key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['13.72.111.55', 'zakhussain.com', 'www.zakhussain.com']
+#ALLOWED_HOSTS = ['52.188.51.94','13.72.111.55', 'zakhussain.com', 'www.zakhussain.com']
 
+ALLOWED_HOSTS = ['52.188.51.94','zakhussain.com', 'www.zakhussain.com']
 # Only for debug=True
-# ALLOWED_HOSTS  = ALLOWED_HOSTS + ['127.0.0.1']
+#ALLOWED_HOSTS  = ALLOWED_HOSTS + ['127.0.0.1']
 
 
 # Application definition
