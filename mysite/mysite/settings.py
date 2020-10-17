@@ -28,8 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['52.188.51.94','zakhussain.com', 'www.zakhussain.com']
 # Only for debug=True
-#ALLOWED_HOSTS  = ALLOWED_HOSTS + ['127.0.0.1', 'localhost']
-#SECRET_KEY = 2
+# ALLOWED_HOSTS  = ALLOWED_HOSTS + ['127.0.0.1', 'localhost']
+# SECRET_KEY = 2
 
 # Application definition
 
